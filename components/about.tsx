@@ -24,7 +24,7 @@ export default function About() {
 
         <div className="pt-3">
           <h3 className="text-[#d4af37] font-semibold mb-3">Training & Certification:</h3>
-          <ul className="grid grid-cols-1 sm:grid-cols-2 gap-9 text-xl sm:text-sm">
+          <ul className="grid grid-cols-1 sm:grid-cols-2 gap-6 text-sm sm:text-base">
             <li className="flex items-start gap-3 group">
               <span className="text-[#d4af37] mt-0.5">→</span>
               <Link href="https://drive.google.com/drive/folders/1rlQJ69ivdHFHMa6nr8LjpgRd-YnZ4hIE?usp=drive_link" className="block leading-tight">

@@ -29,7 +29,7 @@ export default function WorkExperience() {
     return (
         <section id="work-experience" className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8">
             <div className="max-w-6xl mx-auto">
-                <h3 className="text-2xl sm:text-2xl font-bold text-white mb-6 flex items-center gap-3">
+                <h3 className="text-xl sm:text-2xl font-bold text-white mb-6 flex items-center gap-3">
                     <span className="text-[#d4af37]">01.</span> Work Experience
                 </h3>
 
@@ -38,10 +38,10 @@ export default function WorkExperience() {
                         <div key={idx} className="relative">
                             <div className="absolute w-4 h-4 bg-[#d4af37] rounded-full -left-[41px] sm:-left-[49px] top-1.5 border-4 border-[#1a1a1a]"></div>
                             <div>
-                                <span className="text-[#d4af37] font-mono text-xl sm:text-sm bg-[#d4af37]/10 px-2 py-1 rounded mb-2 inline-block">{item.year}</span>
-                                <h4 className="text-white font-bold text-xl sm:text-xl mb-1">{item.title}</h4>
-                                <p className="text-gray-100 text-xl mb-3">{item.company}</p>
-                                <ul className="list-disc list-outside ml-4 text-gray-100 text-lg sm:text-sm space-y-1 text-justify marker:text-[#d4af37]">
+                                <span className="text-[#d4af37] font-mono text-sm sm:text-base bg-[#d4af37]/10 px-2 py-1 rounded mb-2 inline-block">{item.year}</span>
+                                <h4 className="text-white font-bold text-base sm:text-lg mb-1">{item.title}</h4>
+                                <p className="text-gray-100 text-sm sm:text-base mb-3">{item.company}</p>
+                                <ul className="list-disc list-outside ml-4 text-gray-100 text-sm sm:text-base space-y-1 text-justify marker:text-[#d4af37]">
                                     {item.desc.map((point, i) => (
                                         <li key={i}>{point}</li>
                                     ))}
