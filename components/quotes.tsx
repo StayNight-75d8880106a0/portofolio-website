@@ -31,7 +31,7 @@ export default function Quotes() {
       <h2 className="text-3xl sm:text-4xl font-bold text-white mb-2 text-center">
         ’Developer <span className="text-[#d4af37]">Quotes’</span>
       </h2>
-      <div className="w-16 h-1 bg-[#d4af37] mx-auto mb-8 sm:mb-12"></div>
+      <div className="w-16 h-1 bg-[#d4af37] mx-auto mb-8 sm:mb-12 motion-safe:animate-pulse"></div>
 
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
         {quotes.map((quote, idx) => (
@@ -40,7 +40,7 @@ export default function Quotes() {
             className="p-4 sm:p-6 bg-[#1a1a1a] border border-[#d4af37]/30 rounded-lg hover:border-[#d4af37] hover:bg-[#d4af37]/5 transition-all duration-300 flex flex-col justify-between"
           >
             <div>
-              <p className="text-[#d4af37] text-2xl sm:text-3xl mb-3 sm:mb-4">❝</p>
+              <p className="text-[#d4af37] text-2xl sm:text-3xl mb-3 sm:mb-4 motion-safe:animate-bounce [animation-duration:2s]">❝</p>
               <p className="text-white text-sm sm:text-base leading-relaxed mb-4 italic">{quote.text}</p>
             </div>
             <div className="border-t border-[#d4af37]/20 pt-4">

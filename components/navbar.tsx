@@ -20,8 +20,11 @@ export default function Navbar() {
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
           <div className="flex items-center gap-2">
-            <div className="w-10 h-10 bg-[#d4af37] rounded-lg flex items-center justify-center">
-              <span className="text-black font-bold text-lg"><img src="/assets/coding.svg" alt="japan-sakura" /></span>
+            <div className="relative w-10 h-10 bg-[#d4af37] rounded-lg flex items-center justify-center">
+              <span className="absolute -top-1 -right-1 h-2 w-2 rounded-full bg-[#d4af37] motion-safe:animate-ping"></span>
+              <span className="text-black font-bold text-lg">
+                <img src="/assets/coding.svg" alt="japan-sakura" className="motion-safe:animate-bounce [animation-duration:2s]" />
+              </span>
             </div>
             <span className="text-white font-bold text-xl hidden sm:inline">Ravi Azzura Putra</span>
           </div>
@@ -42,7 +45,7 @@ export default function Navbar() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden text-[#d4af37] hover:text-white transition-colors"
+            className="md:hidden text-[#d4af37] hover:text-white transition-colors motion-safe:animate-pulse"
           >
             {isOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
@@ -50,7 +53,7 @@ export default function Navbar() {
 
         {/* Mobile Menu */}
         {isOpen && (
-          <div className="md:hidden pb-4 space-y-2">
+          <div className="md:hidden pb-4 space-y-2 motion-safe:animate-pulse">
             {menuItems.map((item) => (
               <a
                 key={item.href}

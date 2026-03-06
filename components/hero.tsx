@@ -6,9 +6,9 @@ export default function Hero() {
         <div className="space-y-6 sm:space-y-8">
           <div>
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-3 sm:mb-4 leading-tight">
-              Ravi <span className="text-[#d4af37]">Azzura</span> Putra
+              Ravi <span className="text-[#d4af37] motion-safe:animate-pulse">Azzura</span> Putra
             </h1>
-            <p className="text-xl sm:text-2xl text-[#d4af37] font-light">Backend | Express.js | Node.js | Laravel | Golang</p>
+            <p className="text-xl sm:text-2xl text-[#d4af37] font-light motion-safe:animate-pulse [animation-duration:3s]">Backend | Express.js | Node.js | Laravel | Golang</p>
           </div>
 
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-4">
@@ -29,7 +29,7 @@ export default function Hero() {
           {/* Quick Stats */}
           <div className="grid grid-cols-3 gap-4 sm:gap-6 pt-6 sm:pt-8 border-t border-[#d4af37]/20">
             <div>
-              <p className="text-2xl sm:text-3xl font-bold text-[#d4af37]">3 Month</p>
+              <p className="text-2xl sm:text-3xl font-bold text-[#d4af37] motion-safe:animate-pulse">3 Month</p>
               <p className="text-gray-400 text-xs sm:text-sm">Experience</p>
             </div>
           </div>
@@ -37,7 +37,7 @@ export default function Hero() {
 
         {/* Right Image */}
         <div className="relative mt-8 md:mt-0">
-          <div className="aspect-square bg-gradient-to-br from-[#d4af37]/20 to-[#d4af37]/5 rounded-lg border-2 border-[#d4af37]/30 flex items-center justify-center overflow-hidden">
+          <div className="aspect-square bg-gradient-to-br from-[#d4af37]/20 to-[#d4af37]/5 rounded-lg border-2 border-[#d4af37]/30 flex items-center justify-center overflow-hidden motion-safe:animate-pulse [animation-duration:4s]">
             <div className="w-full h-full bg-cover bg-center opacity-30"></div>
             <div className="absolute inset-0 flex items-center justify-center">
               <div className="relative w-full h-full rounded-md overflow-hidden">
@@ -51,7 +51,7 @@ export default function Hero() {
           </div>
 
           {/* Floating Badge */}
-          <div className="absolute -bottom-3 -right-3 sm:-bottom-4 sm:-right-4 bg-[#d4af37] text-black px-4 sm:px-6 py-2 sm:py-3 rounded-lg font-semibold shadow-lg text-sm sm:text-base">
+          <div className="absolute -bottom-3 -right-3 sm:-bottom-4 sm:-right-4 bg-[#d4af37] text-black px-4 sm:px-6 py-2 sm:py-3 rounded-lg font-semibold shadow-lg text-sm sm:text-base motion-safe:animate-bounce [animation-duration:2s]">
             Available Now
           </div>
         </div>

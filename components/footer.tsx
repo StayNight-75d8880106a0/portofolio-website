@@ -8,8 +8,10 @@ export default function Footer() {
           {/* Brand */}
           <div className="col-span-2 md:col-span-1">
             <div className="flex items-center gap-2 mb-4">
-              <div className="w-10 h-10 bg-[#d4af37] rounded-lg flex items-center justify-center flex-shrink-0">
-                <span className="text-black font-bold text-sm"><img src="/assets/coding.svg" alt="japan-sakura" /></span>
+              <div className="w-10 h-10 bg-[#d4af37] rounded-lg flex items-center justify-center flex-shrink-0 motion-safe:animate-pulse [animation-duration:2.5s]">
+                <span className="text-black font-bold text-sm">
+                  <img src="/assets/coding.svg" alt="japan-sakura" className="motion-safe:animate-bounce [animation-duration:2s]" />
+                </span>
               </div>
               <span className="text-white font-bold text-sm sm:text-base">Ravi Azzura Putra</span>
             </div>
@@ -109,7 +111,7 @@ export default function Footer() {
         <div className="mt-6 sm:mt-8 text-center">
           <a
             href="#"
-            className="inline-block px-3 sm:px-4 py-2 bg-[#d4af37]/10 border border-[#d4af37]/30 text-[#d4af37] rounded-lg hover:bg-[#d4af37]/20 transition-all duration-300 text-xs sm:text-sm"
+            className="inline-block px-3 sm:px-4 py-2 bg-[#d4af37]/10 border border-[#d4af37]/30 text-[#d4af37] rounded-lg hover:bg-[#d4af37]/20 transition-all duration-300 text-xs sm:text-sm motion-safe:animate-bounce [animation-duration:2.5s]"
           >
             ↑ Back to Top
           </a>

@@ -120,7 +120,7 @@ func singleNumber(nums []int) []int {
         id: 4,
         title: "Missing Number",
         difficulty: "Easy",
-        category: "Sorting",
+        category: "Sorting / Array",
         description:
             "Given an array nums containing n distinct numbers in the range [0, n], return the only number in the range that is missing from the array.",
         approach: [
@@ -491,4 +491,47 @@ func smallestEvenMultiple(n int) int {
 }
     `.trim(),
     },
+    {
+    id: 14,
+    title: "Find Numbers with Even Number of Digits",
+    difficulty: "Easy",
+    category: "Math",
+    description:
+      "Given an array nums of integers, return how many of them contain an even number of digits.",
+    approach: [
+      "Iterate through each integer in the input array using a standard for-loop",
+      "For each number, initialize a digit counter ('even') to zero",
+      "Use the 'Chop-off' method: repeatedly divide the current number by 10 to strip the last digit until it reaches zero",
+      "Increment the digit counter for every division performed",
+      "Use the modulo operator (% 2 == 0) to check if the total digit count is even",
+      "Increment the final result count if the condition is met and return it at the end"
+    ],
+    timeComplexity: "O(n × d)",
+    spaceComplexity: "O(1)",
+    uniqueInsight:
+      "This solution avoids the overhead of converting integers to strings or using logarithmic functions. By using pure integer division, the algorithm interacts directly with the numerical representation in memory, which is why it achieves a perfect 0ms runtime (Beats 100%).",
+    lesson:
+      "The 'Chop-off' method (iterative division) is a fundamental arithmetic technique for digit manipulation. It demonstrates that for constrained inputs (max 6 digits), simple iterative logic often outperforms more complex built-in library functions.",
+    conclusion:
+      "The implementation effectively uses a linear-scan strategy combined with a nested digit-counting loop. While the input values are modified during the process, the constant space complexity and high execution speed make this an optimal and reliable approach for real-time processing within the given constraints.",
+    language: "Go",
+    code: `
+func findNumbers(nums []int) int {
+    var count int
+
+    for i := 0; i < len(nums); i++ {
+        var even int
+        for nums[i] > 0 {
+            nums[i] = nums[i] / 10
+            even++
+        }
+        if even % 2 == 0 && even != 0 {
+            count++
+        }
+    }
+
+    return count
+}
+    `.trim(),
+}
 ];

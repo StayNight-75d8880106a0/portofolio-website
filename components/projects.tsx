@@ -45,15 +45,19 @@ export default function Projects() {
                 </div>
                 <button
                   onClick={() => setExpandedId(expandedId === project.id ? null : project.id)}
-                  className={`text-[#d4af37] transition-transform duration-300 flex-shrink-0 mt-1 ${expandedId === project.id ? "rotate-90" : ""
+                  className={`text-[#d4af37] transition-transform duration-500 ease-out flex-shrink-0 mt-1 ${expandedId === project.id ? "rotate-90" : ""
                     }`}
                 >
                   <ChevronRight size={20} />
                 </button>
               </div>
 
-              {expandedId === project.id && (
-                <div className="space-y-4 mt-3 pt-3 border-t border-[#d4af37]/20">
+              <div
+                className={`grid transition-all duration-500 ease-out ${expandedId === project.id ? "grid-rows-[1fr] opacity-100 mt-3" : "grid-rows-[0fr] opacity-0 mt-0"
+                  }`}
+              >
+                <div className="overflow-hidden">
+                  <div className="space-y-4 pt-3 border-t border-[#d4af37]/20">
                   <div>
                     <h4 className="text-[#d4af37] font-semibold mb-1 text-xs sm:text-sm">Project Type</h4>
                     <p className="text-gray-300 text-xs sm:text-sm">{project.projectType}</p>
@@ -96,7 +100,8 @@ export default function Projects() {
                     )}
                   </div>
                 </div>
-              )}
+                </div>
+              </div>
             </div>
           </div>
         ))}

@@ -31,8 +31,14 @@ export default function LeetCode() {
           <div key={category} className="bg-transparent">
             <button
               onClick={() => setOpenCategory(openCategory === category ? null : category)}
-              className="w-full flex items-center justify-between py-3 px-2 sm:px-3 bg-[#0f0f0f]/10 rounded-md hover:bg-[#0f0f0f]/08 transition-colors"
+              className="group relative w-full flex items-center justify-between py-3 px-3 sm:px-4 bg-[#0f0f0f]/10 border border-[#d4af37]/20 rounded-md hover:bg-[#0f0f0f]/30 hover:border-[#d4af37]/60 transition-all duration-300"
             >
+              <span
+                className={`absolute left-0 top-1/2 h-2/3 w-0.5 -translate-y-1/2 bg-[#d4af37] transition-all duration-300 ${openCategory === category
+                  ? "opacity-100 scale-y-100"
+                  : "opacity-0 scale-y-0 group-hover:opacity-100 group-hover:scale-y-100"
+                  }`}
+              />
               <div className="flex items-center gap-3">
                 <h3 className="text-base sm:text-lg font-semibold text-white">{category}</h3>
                 <span className="text-xs text-gray-400">{groupedByCategory[category].length} problems</span>
@@ -40,8 +46,12 @@ export default function LeetCode() {
               <ChevronDown size={18} className={`text-[#d4af37] transition-transform ${openCategory === category ? "rotate-180" : ""}`} />
             </button>
 
-            {openCategory === category && (
-              <div className="mt-4 grid items-start grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+            <div
+              className={`grid transition-all duration-500 ease-out ${openCategory === category ? "grid-rows-[1fr] opacity-100 mt-4" : "grid-rows-[0fr] opacity-0 mt-0"
+                }`}
+            >
+              <div className="overflow-hidden">
+                <div className="grid items-start grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
                 {groupedByCategory[category].map((problem) => (
                   <div key={problem.id} className="bg-[#1a1a1a] border-2 border-[#d4af37]/20 rounded-lg overflow-hidden hover:border-[#d4af37] transition-all duration-300">
                     <button
@@ -70,8 +80,12 @@ export default function LeetCode() {
                       <span className="text-xs px-2 py-0.5 bg-[#d4af37]/10 text-[#d4af37] rounded mt-2">{problem.category}</span>
                     </button>
 
-                    {expandedId === problem.id && (
-                      <div className="px-3 pb-3 border-t border-[#d4af37]/20 space-y-3">
+                    <div
+                      className={`grid transition-all duration-500 ease-out ${expandedId === problem.id ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
+                        }`}
+                    >
+                      <div className="overflow-hidden">
+                        <div className="px-3 pb-3 border-t border-[#d4af37]/20 space-y-3">
                         <div>
                           <h4 className="text-[#d4af37] font-semibold mb-1 text-xs sm:text-sm mt-2">Languages</h4>
                           <p className="text-gray-300 text-xs sm:text-sm">{problem.language}</p>
@@ -117,11 +131,13 @@ export default function LeetCode() {
                           </pre>
                         </div>
                       </div>
-                    )}
+                      </div>
+                    </div>
                   </div>
                 ))}
+                </div>
               </div>
-            )}
+            </div>
           </div>
         ))}
       </div>
