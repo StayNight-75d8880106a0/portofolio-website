@@ -535,7 +535,7 @@ func findNumbers(nums []int) int {
     `.trim(),
 },
 {
-    id: 13,
+    id: 15,
     title: "Three Consecutive Odds",
     difficulty: "Easy",
     category: "Array",
@@ -582,7 +582,7 @@ func threeConsecutiveOdds(arr []int) bool {
     `.trim(),
 },
 {
-    id: 14,
+    id: 16,
     title: "Check If N and Its Double Exist",
     difficulty: "Easy",
     category: "Array",
@@ -622,7 +622,7 @@ func checkIfExist(arr []int) bool {
     `.trim(),
 },
 {
-    id: 15,
+    id: 17,
     title: "Number of Steps to Reduce a Number to Zero",
     difficulty: "Easy",
     category: "Math",
@@ -660,6 +660,50 @@ func numberOfSteps(num int) int {
     }
 
     return count
+}
+    `.trim(),
+}, 
+{
+    id: 18,
+    title: "Average Value of Even Numbers That Are Divisible by Three",
+    difficulty: "Easy",
+    category: "Math",
+    description:
+      "Given an integer array nums of positive integers, return the average value of all even integers that are divisible by 3. The average should be rounded down to the nearest integer.",
+    approach: [
+      "Initialize two variables: 'result' to accumulate the sum and 'count' to track the number of valid integers",
+      "Perform a linear scan of the array to evaluate each element against two conditions",
+      "Check if the number is even (num % 2 == 0) and if it is divisible by three (num % 3 == 0)",
+      "Alternatively, identify these numbers as multiples of 6 (num % 6 == 0)",
+      "If conditions are met, update 'result' and increment 'count'",
+      "After the loop, return 0 if no valid numbers were found; otherwise, return the integer division of result / count"
+    ],
+    timeComplexity: "O(n)",
+    spaceComplexity: "O(1)",
+    uniqueInsight:
+      "This problem reduces to a constrained aggregation task. The dual condition (divisible by 2 AND 3) is a logical conjunction that specifically filters for multiples of 6. By using integer division in Go, the requirement to 'round down' is handled natively by the language's arithmetic behavior, eliminating the need for complex floor functions.",
+    lesson:
+      "Precise logical predicates allow for clean filtering in a single-pass evaluation model. This solution exemplifies how minimal state maintenance (just two counters) can solve an aggregation problem with optimal efficiency.",
+    conclusion:
+      "The implementation achieves a perfect 0ms runtime (Beats 100%) by avoiding high-level abstractions and staying close to machine-level arithmetic. It is both asymptotically optimal and practically efficient, satisfying all constraints with a deterministic and straightforward linear scan.",
+    language: "Go",
+    code: `
+func averageValue(nums []int) int {
+    var result int
+    var count int
+
+    for i := 0; i < len(nums); i++ {
+        if nums[i] % 2 == 0 && nums[i] % 3 == 0 {
+            result += nums[i]
+            count++
+        }
+    }
+
+    if count == 0 {
+        return 0
+    }
+
+    return result / count
 }
     `.trim(),
 },
