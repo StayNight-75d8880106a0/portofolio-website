@@ -8,7 +8,7 @@ export default function Hero() {
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-3 sm:mb-4 leading-tight">
               Ravi <span className="text-[#d4af37] motion-safe:animate-pulse">Azzura</span> Putra
             </h1>
-            <p className="text-xl sm:text-2xl text-[#d4af37] font-light motion-safe:animate-pulse [animation-duration:3s]">Backend | Express.js | Node.js | Laravel | Golang</p>
+            <p className="text-xl sm:text-2xl text-[#d4af37] font-light">Backend | Express.js | Node.js | Laravel | Golang</p>
           </div>
 
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-4">
@@ -37,7 +37,7 @@ export default function Hero() {
 
         {/* Right Image */}
         <div className="relative mt-8 md:mt-0">
-          <div className="aspect-square bg-gradient-to-br from-[#d4af37]/20 to-[#d4af37]/5 rounded-lg border-2 border-[#d4af37]/30 flex items-center justify-center overflow-hidden motion-safe:animate-pulse [animation-duration:4s]">
+          <div className="aspect-square bg-gradient-to-br from-[#d4af37]/20 to-[#d4af37]/5 rounded-lg border-2 border-[#d4af37]/30 flex items-center justify-center overflow-hidden relative">
             <div className="w-full h-full bg-cover bg-center opacity-30"></div>
             <div className="absolute inset-0 flex items-center justify-center">
               <div className="relative w-full h-full rounded-md overflow-hidden">

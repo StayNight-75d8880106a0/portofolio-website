@@ -29,15 +29,18 @@ export default function Skills() {
         {/* Hard Skills */}
         <div>
           <h3 className="text-xl sm:text-2xl font-bold text-white mb-6 sm:mb-8">Hard Skills</h3>
-          <div className="space-y-5 sm:space-y-6">
+          <div className="grid gap-4 sm:gap-5">
             {hardSkills.map((item) => (
-              <div key={item.category}>
-                <h4 className="text-[#d4af37] font-semibold mb-2 sm:mb-3 text-sm sm:text-base">{item.category}</h4>
-                <div className="flex flex-wrap gap-2">
+              <div
+                key={item.category}
+                className="rounded-xl border border-[#d4af37]/25 bg-[#151515] p-4 sm:p-5 hover:border-[#d4af37]/45 hover:bg-[#1a1a1a] transition-all duration-300"
+              >
+                <h4 className="text-[#d4af37] font-semibold mb-3 text-sm sm:text-base tracking-wide">{item.category}</h4>
+                <div className="flex flex-wrap gap-2.5">
                   {item.skills.map((skill) => (
                     <span
                       key={skill}
-                      className="px-3 sm:px-4 py-1.5 sm:py-2 bg-[#d4af37]/10 text-[#d4af37] rounded-lg border border-[#d4af37]/30 text-xs sm:text-sm font-medium hover:bg-[#d4af37]/20 transition-all duration-300"
+                      className="px-3 sm:px-3.5 py-1.5 bg-[#d4af37]/10 text-[#f3d982] rounded-md border border-[#d4af37]/30 text-xs sm:text-sm font-medium leading-none hover:bg-[#d4af37]/20 hover:border-[#d4af37]/50 transition-all duration-300"
                     >
                       {skill}
                     </span>
