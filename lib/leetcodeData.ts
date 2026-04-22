@@ -707,4 +707,132 @@ func averageValue(nums []int) int {
 }
     `.trim(),
 },
+{
+    id: 19,
+    title: "Fizz Buzz",
+    difficulty: "Easy",
+    category: "Math",
+    description:
+        "Given an integer n, return a string array answer (1-indexed) where answer[i] == 'FizzBuzz' if i is divisible by 3 and 5, 'Fizz' if i is divisible by 3, 'Buzz' if i is divisible by 5, and i as a string if none of the above conditions are true.",
+    approach: [
+        "Iterate through each integer from 1 to n using a loop",
+        "Evaluate if the current number is divisible by both 3 and 5 first to avoid logical errors",
+        "Check if the number is divisible by 3 or 5 individually as secondary conditions",
+        "Convert the integer to a string format if no divisibility conditions are met",
+        "Append each result to a dynamic array and return the final sequence"
+    ],
+    timeComplexity: "O(n)",
+    spaceComplexity: "O(n)",
+    uniqueInsight:
+        "The order of checking is crucial: numbers divisible by both 3 and 5 must be handled first to avoid being incorrectly categorized as only 'Fizz' or 'Buzz'.",
+    lesson:
+        "This structured conditional flow ensures correctness while maintaining readability, utilizing modulo for efficient divisibility checks.",
+    conclusion:
+        "This solution exemplifies a deterministic mapping between integer sequences and categorical string representations through modular arithmetic, highlighting a fundamental paradigm in algorithm design where discrete numerical properties are translated into symbolic outputs.",
+    language: "Go",
+    code: `
+func fizzBuzz(n int) []string {
+    
+    var result []string
+
+    for i := 1; i <= n; i++ {
+        if i % 3 == 0 && i % 5 == 0 {
+            result = append(result, "FizzBuzz")
+        } else if i % 3 == 0 {
+            result = append(result, "Fizz")
+        } else if i % 5 == 0 {
+            result = append(result, "Buzz")
+        } else {
+            NumberInString := strconv.Itoa(i)
+            result = append(result, NumberInString)
+        }
+    }
+
+    return result
+
+}
+    `.trim(),
+},
+{
+    id: 20,
+    title: "Count Operations to Obtain Zero",
+    difficulty: "Easy",
+    category: "Math",
+    description:
+        "You are given two non-negative integers num1 and num2. In one operation, if num1 >= num2, subtract num2 from num1; otherwise, subtract num1 from num2. Return the number of operations required to make either num1 = 0 or num2 = 0.",
+    approach: [
+        "Initialize a counter to keep track of the number of operations",
+        "Implement a loop that continues as long as both num1 and num2 are greater than zero",
+        "Apply the subtraction logic: if num1 is greater or equal, subtract num2 from num1",
+        "Conversely, if num2 is greater, subtract num1 from num2",
+        "Increment the counter after each subtraction step until the terminal condition is met"
+    ],
+    timeComplexity: "O(max(num1, num2))",
+    spaceComplexity: "O(1)",
+    uniqueInsight:
+        "This problem mirrors the fundamental idea behind the subtraction-based version of the Euclidean Algorithm, reducing the larger value iteratively until one operand reaches zero.",
+    lesson:
+        "While this approach resembles division, using repeated subtraction makes the logic highly intuitive and ensures the problem size is reduced at every step.",
+    conclusion:
+        "This solution operationalizes a primitive yet conceptually rich instantiation of the Euclidean reduction process. While it exhibits optimal runtime in practice for small inputs, its theoretical linear complexity highlights the distinction between practical efficiency and asymptotic bounds in subtraction-based regimes.",
+    language: "Go",
+    code: `
+func countOperations(num1 int, num2 int) int {
+    
+    var count int
+
+    for num1 > 0 && num2 > 0 {
+        if num1 >= num2 {
+            num1 = num1 - num2
+        } else if num2 >= num1 {
+            num2 = num2 - num1
+        }
+        count++
+    }
+
+    return count
+
+}
+    `.trim(),
+},
+{
+    id: 21,
+    title: "Count Odd Numbers in an Interval Range",
+    difficulty: "Easy",
+    category: "Math",
+    description:
+        "Given two non-negative integers low and high. Return the count of odd numbers between low and high (inclusive).",
+    approach: [
+        "Initialize a counter variable to store the count of odd values found",
+        "Iterate through every integer starting from low up to and including high",
+        "Apply the modulo operator to check if the current number is not divisible by 2",
+        "Increment the counter for every number that satisfies the odd parity condition",
+        "Return the accumulated result after the loop completes the full range scan"
+    ],
+    timeComplexity: "O(n)",
+    spaceComplexity: "O(1)",
+    uniqueInsight:
+        "The most direct method is an iterative parity check; an odd number is simply any integer not divisible by 2, identified using the modulo operator.",
+    lesson:
+        "This brute-force approach prioritizes simplicity and readability, making it ideal for beginners, though it sacrifices performance on very large input ranges.",
+    conclusion:
+        "While algorithmically correct, this linear strategy highlights the trade-off between intuitive iteration and mathematically optimized formulations. It serves as a baseline for correctness before moving toward constant-time arithmetic patterns inherent in number sequences.",
+    language: "Go",
+    code: `
+func countOdds(low int, high int) int {
+    
+    var result int
+
+    for low <= high {
+        if low % 2 != 0 {
+            result++
+        }
+        low++
+    }
+
+    return result
+
+}
+    `.trim(),
+},
 ];
