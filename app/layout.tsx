@@ -12,22 +12,9 @@ export const metadata: Metadata = {
   description: "Backend Developer Portfolio - Specializing in scalable APIs and system design",
   generator: "v0.app",
   icons: {
-    icon: [
-      {
-        url: "/assets/coding.svg",
-        media: "(prefers-color-scheme: light)",
-      },
-      {
-        url: "/assets/coding.svg",
-        media: "(prefers-color-scheme: dark)",
-      },
-      {
-        url: "/assets/coding.svg",
-        type: "image/svg+xml",
-      },
-    ],
-    shortcut: "/assets/coding.svg",
-    apple: "/assets/coding.svg",
+    icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
+    apple: "/assets/coding.png",
   },
 }
 
@@ -39,8 +26,6 @@ export default function RootLayout({
   return (
     <html lang="id" className="dark scroll-smooth">
       <head>
-        <link rel="icon" href="/assets/coding.svg" />
-        <link rel="apple-touch-icon" href="/assets/coding.svg" />
         <meta name="theme-color" content="#000000" />
       </head>
       <body className={`font-sans antialiased bg-black text-white`}>

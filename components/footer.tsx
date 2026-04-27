@@ -10,7 +10,7 @@ export default function Footer() {
             <div className="flex items-center gap-2 mb-4">
               <div className="w-10 h-10 bg-[#d4af37] rounded-lg flex items-center justify-center flex-shrink-0 motion-safe:animate-pulse [animation-duration:2.5s]">
                 <span className="text-black font-bold text-sm">
-                  <img src="/assets/coding.svg" alt="japan-sakura" className="motion-safe:animate-bounce [animation-duration:2s]" />
+                  <img src="/assets/coding.png" alt="logo" width={40} height={40} className="w-full h-full object-contain motion-safe:animate-bounce animation-duration-[2s]" />
                 </span>
               </div>
               <span className="text-white font-bold text-sm sm:text-base">Ravi Azzura Putra</span>

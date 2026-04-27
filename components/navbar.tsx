@@ -23,7 +23,7 @@ export default function Navbar() {
             <div className="relative w-10 h-10 bg-[#d4af37] rounded-lg flex items-center justify-center">
               <span className="absolute -top-1 -right-1 h-2 w-2 rounded-full bg-[#d4af37] motion-safe:animate-ping"></span>
               <span className="text-black font-bold text-lg">
-                <img src="/assets/coding.svg" alt="japan-sakura" className="motion-safe:animate-bounce [animation-duration:2s]" />
+                <img src="/assets/coding.png" alt="logo" width={40} height={40} className="w-full h-full object-contain motion-safe:animate-bounce animation-duration-[2s]" />
               </span>
             </div>
             <span className="text-white font-bold text-xl hidden sm:inline">Ravi Azzura Putra</span>
