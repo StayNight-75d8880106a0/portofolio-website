@@ -189,7 +189,7 @@ func fib(n int) int {
         id: 6,
         title: "Divide Two Integers",
         difficulty: "Medium",
-        category: "Math / Bit Manipulation",
+        category: "Bit Manipulation",
         description:
             "Given two integers dividend and divisor, divide two integers without using multiplication, division, and mod operator. The integer division should truncate toward zero.",
         approach: [
@@ -835,4 +835,56 @@ func countOdds(low int, high int) int {
 }
     `.trim(),
 },
+{
+    id: 22,
+    title: "Find Closest Person",
+    difficulty: "Easy",
+    category: "Simulation",
+    description:
+        "Given three integers x, y, and z representing positions on a number line, determine which person (1 or 2) reaches Person 3 (at position z) first. Person 1 is at x and Person 2 is at y. Both move at the same speed. Return 1 if Person 1 arrives first, 2 if Person 2 arrives first, and 0 if they arrive at the same time.",
+    approach: [
+        "Calculate the absolute distance between Person 1 (x) and the target (z)",
+        "Calculate the absolute distance between Person 2 (y) and the target (z)",
+        "Use manual conditional subtraction (e.g., x - z or z - x) to ensure a non-negative distance without using external math libraries",
+        "Compare the two calculated distances: the person with the smaller distance reaches the target first",
+        "Return 1, 2, or 0 based on the comparison result"
+    ],
+    timeComplexity: "O(1)",
+    spaceComplexity: "O(1)",
+    uniqueInsight:
+        "By implementing absolute distance manually through conditional branching rather than using library functions, the solution achieves maximum execution speed by minimizing the call stack overhead.",
+    lesson:
+        "The problem effectively distills a kinetic movement scenario into a fundamental geometric comparison of absolute differentials on a 1D coordinate system.",
+    conclusion:
+        "The efficacy of this implementation resides in its adherence to the principle of parsimony. By eschewing computationally expensive abstractions in favor of direct conditional branching, the solution achieves an optimal asymptotic profile, ensuring temporal overhead remains invariant.",
+    language: "Go",
+    code: `
+func findClosest(x int, y int, z int) int {
+
+    var resultX int
+    var resultY int
+
+    if x > z {
+        resultX = x - z
+    } else {
+        resultX = z - x
+    }
+
+    if y > z {
+        resultY = y - z
+    } else {
+        resultY = z - y
+    }
+
+    if resultX > resultY {
+        return 2
+    } else if resultY > resultX {
+        return 1
+    } else {
+        return 0
+    }
+
+}
+    `.trim(),
+}
 ];
